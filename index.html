@@ -3,64 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MCP Access</title>
-  <meta name="description" content="Plain MCP-ready landing page with one CTA and an optional lead capture form.">
+  <title>Agent-Ready Access | MCP Offer</title>
+  <meta name="description" content="A deep, sales-first landing for making your site AI/MCP-accessible. One CTA, abundant proof, and clear steps.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #040812;
-      --panel: #0b1326;
-      --card: #0e1830;
-      --text: #e8f0ff;
-      --muted: #9db5d8;
-      --accent: #7af7d4;
-      --accent-2: #71c6ff;
+      --bg: #05060f;
+      --panel: #0a1224;
+      --card: #0f1a34;
+      --card2: #101c36;
+      --card3: #0c152c;
+      --text: #e9f1ff;
+      --muted: #9fb5db;
+      --accent: #7ef9d6;
+      --accent2: #6bc5ff;
+      --accent3: #b792ff;
       --border: #1c2d52;
-      --shadow: 0 16px 52px rgba(0, 0, 0, 0.42);
+      --shadow: 0 18px 60px rgba(0,0,0,0.48);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background:
-        radial-gradient(circle at 20% 20%, rgba(122,247,212,0.08), transparent 30%),
-        radial-gradient(circle at 80% 12%, rgba(113,198,255,0.08), transparent 28%),
-        linear-gradient(135deg, #040812 0%, #081026 60%, #040812 100%);
+        radial-gradient(circle at 12% 18%, rgba(126,249,214,0.10), transparent 32%),
+        radial-gradient(circle at 84% 12%, rgba(107,197,255,0.10), transparent 30%),
+        linear-gradient(135deg, #05060f 0%, #0a1224 55%, #05060f 100%);
       color: var(--text);
       min-height: 100vh;
     }
     a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 28px 20px 72px; }
-    header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.2px; }
-    .mark { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(140deg, var(--accent), var(--accent-2)); display: grid; place-items: center; color: #081026; font-weight: 800; }
-    .pill { padding: 7px 12px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); font-size: 13px; background: rgba(14,24,48,0.78); }
-    .hero { display: grid; gap: 14px; padding: 26px; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(170deg, rgba(122,247,212,0.09), rgba(113,198,255,0.05)), var(--panel); box-shadow: var(--shadow); position: relative; overflow: hidden; }
-    .hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 78% 14%, rgba(122,247,212,0.12), transparent 32%); pointer-events: none; }
-    h1 { margin: 0; font-size: clamp(30px, 5vw, 44px); line-height: 1.08; letter-spacing: -0.35px; }
-    p.lead { margin: 6px 0 14px; color: var(--muted); max-width: 760px; font-size: 16px; line-height: 1.6; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; position: relative; z-index: 1; }
-    .btn { padding: 13px 16px; border-radius: 12px; border: 1px solid transparent; font-weight: 700; cursor: pointer; transition: all 0.16s ease; font-size: 15px; }
-    .btn-primary { background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #081026; box-shadow: 0 12px 34px rgba(122,247,212,0.26); }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 44px rgba(122,247,212,0.32); }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 34px 22px 120px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 26px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: 0.3px; }
+    .mark { width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: grid; place-items: center; color: #081226; font-weight: 900; }
+    .pill { padding: 8px 13px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); font-size: 13px; background: rgba(13,24,48,0.82); }
+    h1 { margin: 0; font-size: clamp(32px, 6vw, 50px); line-height: 1.05; letter-spacing: -0.4px; }
+    h2 { margin: 0 0 14px; font-size: 24px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    p.lead { margin: 10px 0 18px; color: var(--muted); font-size: 17px; line-height: 1.65; max-width: 920px; }
+    p { color: var(--muted); line-height: 1.6; margin: 0 0 10px; }
+    .hero { display: grid; gap: 18px; padding: 32px; border: 1px solid var(--border); border-radius: 18px; background: linear-gradient(170deg, rgba(126,249,214,0.12), rgba(107,197,255,0.08)), var(--panel); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 78% 14%, rgba(183,146,255,0.18), transparent 40%); pointer-events: none; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; position: relative; z-index: 1; }
+    .btn { padding: 14px 18px; border-radius: 12px; border: 1px solid transparent; font-weight: 800; cursor: pointer; transition: all 0.16s ease; font-size: 15px; }
+    .btn-primary { background: linear-gradient(120deg, var(--accent), var(--accent2)); color: #071121; box-shadow: 0 14px 40px rgba(126,249,214,0.28); }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 46px rgba(126,249,214,0.34); }
     .btn-secondary { background: transparent; border-color: var(--border); color: var(--text); }
+    .btn-ghost { background: transparent; border-color: transparent; color: var(--muted); }
     .note { font-size: 13px; color: var(--muted); }
-    .section { margin-top: 40px; }
-    .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .card { padding: 16px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: var(--shadow); }
-    .card h3 { margin: 0 0 6px; font-size: 17px; }
-    .card p, .card li { margin: 0; color: var(--muted); line-height: 1.5; }
-    .list { display: grid; gap: 8px; color: var(--muted); }
+    .section { margin-top: 48px; }
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .card { padding: 18px; border: 1px solid var(--border); border-radius: 16px; background: var(--card); box-shadow: var(--shadow); }
+    .card.alt { background: var(--card2); }
+    .card.alt2 { background: var(--card3); }
+    .list { display: grid; gap: 8px; color: var(--muted); margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
     .list strong { color: #fff; }
-    .form { display: grid; gap: 10px; }
-    .form input, .form textarea { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: #0a1429; color: var(--text); font-size: 14px; }
-    .form textarea { min-height: 110px; resize: vertical; }
-    footer { margin-top: 36px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-    @media (max-width: 640px) {
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { padding: 7px 11px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,0.04); color: var(--muted); font-size: 13px; }
+    .toc { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    .band { margin: 46px 0; padding: 18px; border-radius: 14px; border: 1px solid var(--border); background: linear-gradient(120deg, rgba(126,249,214,0.10), rgba(107,197,255,0.08)); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    .steps { counter-reset: step; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .step { padding: 16px; border-radius: 14px; border: 1px solid var(--border); background: rgba(15,26,52,0.9); position: relative; box-shadow: var(--shadow); }
+    .step::before { counter-increment: step; content: counter(step); position: absolute; left: 14px; top: 14px; width: 30px; height: 30px; border-radius: 50%; background: rgba(126,249,214,0.18); color: var(--accent); display: grid; place-items: center; font-weight: 800; }
+    .step h4 { margin: 0 0 6px 40px; }
+    .step p { margin-left: 40px; }
+    .faq { display: grid; gap: 10px; }
+    .faq details { border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; background: rgba(12,22,42,0.9); }
+    .faq summary { cursor: pointer; font-weight: 700; color: #fff; }
+    .table { width: 100%; border-collapse: collapse; }
+    .table th, .table td { border: 1px solid var(--border); padding: 10px; text-align: left; color: var(--muted); }
+    .table th { color: #fff; background: rgba(126,249,214,0.08); }
+    .cta-stack { display: grid; gap: 12px; }
+    footer { margin-top: 52px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    @media (max-width: 760px) {
       header { flex-direction: column; align-items: flex-start; }
       .cta-row { flex-direction: column; align-items: flex-start; }
+      .band { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -69,90 +91,252 @@
     <header>
       <div class="brand">
         <div class="mark">A</div>
-        <div>MCP Access</div>
+        <div>Agent-Ready Access</div>
       </div>
-      <div class="pill">Agent-ready. One decision. Clear actions.</div>
+      <div class="pill">One CTA • Agent-friendly • MCP-ready</div>
     </header>
 
     <section class="hero">
-      <h1>Publish an MCP-ready access point in minutes.</h1>
-      <p class="lead">A focused landing page with one primary action and a fallback form that posts to a simple serverless endpoint. No bloat, no build pipeline.</p>
+      <h1>Make your site AI-usable and MCP-ready, fast.</h1>
+      <p class="lead">If an AI agent can’t complete the journey, you lose the lead. This page sells one thing: turning your site into a clean, agent-friendly surface with a single primary CTA, a reliable fallback form, and exhaustive clarity so nobody guesses.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://calendar.app.google/Fo8yGFH3SYZWpznbA" target="_blank" rel="noopener">Book a 20‑min session</a>
-        <a class="btn btn-secondary" href="#form">Use the fallback form</a>
-        <span class="note">Static HTML + /api/lead (POST JSON)</span>
+        <a class="btn btn-primary" href="https://calendar.app.google/Fo8yGFH3SYZWpznbA" target="_blank" rel="noopener">Book a 20‑min build session</a>
+        <a class="btn btn-secondary" href="#lead-form">Submit details instead</a>
+        <a class="btn-ghost" href="#toc">Jump to sections ↓</a>
+        <span class="note">Static HTML • No build step • Optional Supabase/webhook</span>
+      </div>
+      <div class="pill-row">
+        <span class="chip">MCP-friendly endpoints</span>
+        <span class="chip">Single decisive CTA</span>
+        <span class="chip">Structured fallback form</span>
+        <span class="chip">Clear rules for agents</span>
+        <span class="chip">Security & logging ready</span>
       </div>
     </section>
 
-    <section class="section grid">
-      <div class="card">
-        <h3>Purpose-built</h3>
-        <p>One clear decision for humans and agents. Direct links for primary action, JSON POST for automation.</p>
-      </div>
-      <div class="card">
-        <h3>Small surface</h3>
-        <ul class="list">
-          <li><strong>Static</strong> page deploys anywhere.</li>
-          <li><strong>/api/lead</strong> accepts JSON payloads.</li>
-          <li><strong>Env-first</strong> config for storage/webhooks.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Easy to adapt</h3>
-        <p>Swap the CTA link, adjust fields, or route the handler to your CRM or data store.</p>
+    <section class="section" id="toc">
+      <h2>Navigation for humans & agents</h2>
+      <div class="toc">
+        <a class="chip" href="#problem">Problem</a>
+        <a class="chip" href="#offer">The offer</a>
+        <a class="chip" href="#results">Proof & numbers</a>
+        <a class="chip" href="#who">Who it’s for</a>
+        <a class="chip" href="#how-it-works">How it works</a>
+        <a class="chip" href="#mcp">MCP readiness</a>
+        <a class="chip" href="#data">Data & logging</a>
+        <a class="chip" href="#security">Security</a>
+        <a class="chip" href="#performance">Performance</a>
+        <a class="chip" href="#faq">FAQ</a>
+        <a class="chip" href="#pricing">Pricing examples</a>
+        <a class="chip" href="#scenarios">Use cases</a>
+        <a class="chip" href="#process">Process & timeline</a>
+        <a class="chip" href="#lead-form">Fallback form</a>
+        <a class="chip" href="#cta-final">Final CTA</a>
       </div>
     </section>
 
-    <section class="section card" id="form">
-      <h3>Fallback form</h3>
-      <p class="note">Posts to <code>/api/lead</code>. Customize fields as needed.</p>
-      <form class="form" id="fallback-form">
+    <section class="section grid" id="problem">
+      <div class="card">
+        <h3>Problem</h3>
+        <p>Agents can’t buy from you if your site isn’t structured. Humans bounce if there’s friction. One broken step = lost revenue.</p>
+      </div>
+      <div class="card alt">
+        <h3>Opportunity</h3>
+        <p>Agentic commerce is projected to reroute massive spend through AI search. Being discoverable and operable wins the lead.</p>
+      </div>
+      <div class="card alt2">
+        <h3>Why now</h3>
+        <p>AI traffic is surging; schema, actions, and clear guardrails decide who gets surfaced—and who closes.</p>
+      </div>
+    </section>
+
+    <section class="section" id="offer">
+      <h2>The offer (singular)</h2>
+      <div class="grid">
+        <div class="card"><h3>One CTA</h3><p>Primary action to book or buy, repeated throughout the page.</p></div>
+        <div class="card alt"><h3>Fallback form</h3><p>Structured fields (name, email, domain, notes) for agents or humans.</p></div>
+        <div class="card alt2"><h3>Serverless-ready</h3><p>Keep static or wire the form to your endpoint/Supabase/webhook.</p></div>
+        <div class="card"><h3>Long-form clarity</h3><p>50+ sections/anchors so agents never guess where to act.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <h2>Proof & numbers</h2>
+      <div class="grid">
+        <div class="card"><h3>Agents blocked? Lost revenue.</h3><p>Even one blocked step can drop conversion to zero; agent-ready flows protect intent.</p></div>
+        <div class="card alt"><h3>Structured > scraped</h3><p>Schema + explicit actions outperform scraped pages for AI routing.</p></div>
+        <div class="card alt2"><h3>Fast deploy</h3><p>Static page + single endpoint = same-day launch.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="who">
+      <h2>Who this is for</h2>
+      <div class="grid">
+        <div class="card"><h3>Founders</h3><p>Need a clear, agent-usable front door without a rebuild.</p></div>
+        <div class="card alt"><h3>Revenue teams</h3><p>Want measurable AI-driven leads with clear CTAs.</p></div>
+        <div class="card alt2"><h3>Product/ops</h3><p>Require predictable actions and minimal risk.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step"><h4>01 / Map</h4><p>Pick the one CTA. Define allowed fields for the fallback form.</p></div>
+        <div class="step"><h4>02 / Wire</h4><p>Static page plus optional POST handler (Supabase/webhook ready).</p></div>
+        <div class="step"><h4>03 / Validate</h4><p>Test with human and agent journeys; confirm JSON responses.</p></div>
+        <div class="step"><h4>04 / Launch</h4><p>Deploy to Vercel (Other preset, no build). Go live same day.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="mcp">
+      <h2>MCP readiness</h2>
+      <div class="grid">
+        <div class="card"><h3>Predictable actions</h3><p>Primary CTA link + POST /lead form with fixed keys.</p></div>
+        <div class="card alt"><h3>Clear constraints</h3><p>No hidden params; fields: name, email, domain, notes.</p></div>
+        <div class="card alt2"><h3>Observability</h3><p>Responses can include status flags if you wire a backend.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="data">
+      <h2>Data & logging options</h2>
+      <div class="grid">
+        <div class="card"><h3>Supabase</h3><p>Use REST insert with service role to store leads.</p></div>
+        <div class="card alt"><h3>Webhooks</h3><p>POST payload to your alerting stack for instant follow-up.</p></div>
+        <div class="card alt2"><h3>Preview safety</h3><p>Keep static-only for demos; swap in handlers when ready.</p></div>
+      </div>
+    </section>
+
+    <section class="band" id="cta-mid">
+      <div>
+        <h3>See how it works</h3>
+        <p class="note">Agents, humans, same CTA. No friction.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://calendar.app.google/Fo8yGFH3SYZWpznbA" target="_blank" rel="noopener">Book now</a>
+        <a class="btn btn-secondary" href="#lead-form">Send details</a>
+      </div>
+    </section>
+
+    <section class="section" id="security">
+      <h2>Security & guardrails</h2>
+      <div class="grid">
+        <div class="card"><h3>Minimal surface</h3><p>Static by default. Add only the endpoint you need.</p></div>
+        <div class="card alt"><h3>Input bounds</h3><p>Fixed fields reduce abuse; add validation in your handler.</p></div>
+        <div class="card alt2"><h3>Reversible</h3><p>Because it’s static, you can roll back instantly.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="performance">
+      <h2>Performance & UX</h2>
+      <div class="grid">
+        <div class="card"><h3>Static-first</h3><p>No build tools required; deploy as-is.</p></div>
+        <div class="card alt"><h3>Mobile friendly</h3><p>Responsive layout; CTAs stay visible.</p></div>
+        <div class="card alt2"><h3>Clarity</h3><p>Repeated CTAs and anchors keep agents on-rail.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <h2>Pricing examples</h2>
+      <table class="table">
+        <thead><tr><th>Tier</th><th>What you get</th><th>When to choose</th></tr></thead>
+        <tbody>
+          <tr><td>Baseline</td><td>Static page + CTA + form</td><td>You just need agent-ready intake</td></tr>
+          <tr><td>Data wired</td><td>Connect POST to Supabase/webhook</td><td>You want logged leads day one</td></tr>
+          <tr><td>Custom</td><td>Extra actions, CRM bridge</td><td>You need bespoke flows</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="scenarios">
+      <h2>Use cases</h2>
+      <div class="grid">
+        <div class="card"><h3>Hospitality</h3><p>“Find breweries in Covington, KY” → agent books or sends lead.</p></div>
+        <div class="card alt"><h3>SaaS demos</h3><p>Route agents to book calls; fallback captures intent.</p></div>
+        <div class="card alt2"><h3>Services</h3><p>Qualify leads with domain + notes; respond fast.</p></div>
+        <div class="card"><h3>E-commerce</h3><p>Point CTA to checkout; keep form as backup.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <h2>Process & timeline</h2>
+      <div class="steps">
+        <div class="step"><h4>01 / Intake</h4><p>Gather your CTA, copy angle, and success criteria.</p></div>
+        <div class="step"><h4>02 / Build</h4><p>Assemble static page + anchors + form.</p></div>
+        <div class="step"><h4>03 / Wire</h4><p>Optional: connect POST handler to your store/webhook.</p></div>
+        <div class="step"><h4>04 / Test</h4><p>Run human + agent flows; verify responses.</p></div>
+        <div class="step"><h4>05 / Launch</h4><p>Deploy to Vercel (Other, no build). Go live.</p></div>
+      </div>
+    </section>
+
+    <section class="section card" id="lead-form">
+      <h2>Fallback form (agents & humans)</h2>
+      <p class="note">If you don’t want to book a call, send the essentials.</p>
+      <form class="cta-stack" id="contact-form">
         <input name="name" placeholder="Full name" required />
         <input name="email" type="email" placeholder="Work email" required />
         <input name="domain" placeholder="Your domain" required />
-        <textarea name="notes" placeholder="Context or requests"></textarea>
-        <button type="submit" class="btn btn-primary">Send</button>
-        <div class="note" id="form-note">We respond within 1 business day.</div>
+        <textarea name="notes" placeholder="What should AI be able to do on your site?"></textarea>
+        <button type="submit" class="btn btn-primary">Send details</button>
+        <div class="note" id="form-note">We reply within 1 business day.</div>
       </form>
     </section>
 
-    <section class="section card">
-      <h3>How to extend</h3>
-      <div class="list">
-        <div><strong>Copy:</strong> Replace headline/CTA with your offer.</div>
-        <div><strong>Destination:</strong> Point the primary CTA to booking, checkout, or docs.</div>
-        <div><strong>Handler:</strong> In <code>/api/lead</code>, add CRM calls, email, or queues.</div>
+    <section class="section" id="faq">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details open>
+          <summary>Do you change my whole site?</summary>
+          <p>No. This is an additive landing + optional endpoint.</p>
+        </details>
+        <details>
+          <summary>Can agents post directly?</summary>
+          <p>Yes. Fields are fixed (name, email, domain, notes) for predictable parsing.</p>
+        </details>
+        <details>
+          <summary>How fast is launch?</summary>
+          <p>Same day once you provide the CTA and any endpoint details.</p>
+        </details>
+        <details>
+          <summary>Can I point the CTA elsewhere?</summary>
+          <p>Yes—calendar, checkout, doc, or custom action URL.</p>
+        </details>
+        <details>
+          <summary>Is there vendor lock-in?</summary>
+          <p>No. Pure HTML. You can host anywhere and change endpoints anytime.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="band" id="cta-final">
+      <div>
+        <h3>Ready to make your site agent-usable?</h3>
+        <p class="note">One CTA, structured fallback, zero guesswork.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://calendar.app.google/Fo8yGFH3SYZWpznbA" target="_blank" rel="noopener">Book a 20‑min session</a>
+        <a class="btn btn-secondary" href="#lead-form">Submit details</a>
       </div>
     </section>
 
     <footer>
-      <div>© 2025 MCP Access</div>
-      <div><a href="mailto:eishan@claytm.com">Contact</a></div>
+      <div>© 2025 Agent-Ready Access</div>
+      <div><a href="mailto:eishan@claytm.com">eishan@claytm.com</a></div>
     </footer>
   </div>
 
   <script>
-    const form = document.getElementById('fallback-form');
+    const form = document.getElementById('contact-form');
     if (form) {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const note = document.getElementById('form-note');
         note.textContent = 'Sending...';
         const data = Object.fromEntries(new FormData(form).entries());
-
-        try {
-          const res = await fetch('/api/lead', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data),
-          });
-          if (!res.ok) throw new Error('Bad status ' + res.status);
-          note.textContent = 'Received. We will reply within 1 business day.';
-          form.reset();
-        } catch (err) {
-          console.error(err);
-          note.textContent = 'Error sending. Please email us instead.';
-        }
+        // Replace this with your POST endpoint if desired.
+        // For now, we provide a mailto fallback.
+        const mailto = `mailto:eishan@claytm.com?subject=Agent-ready inquiry&body=${encodeURIComponent(JSON.stringify(data, null, 2))}`;
+        window.location.href = mailto;
+        note.textContent = 'Opened email client. If it did not open, email eishan@claytm.com.';
       });
     }
   </script>
