@@ -10,13 +10,20 @@ export default async function handler(req, res) {
     EMAIL_WEBHOOK_URL = '',
   } = process.env;
 
-  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE) {
-    return res.status(500).json({ error: 'Supabase env not set' });
-  }
+  const payload = req.body || {};
+  const body = {
+    name: payload.name || '',
+    email: payload.email || '',
+    domain: payload.domain || '',
+    notes: payload.notes || '',
+    created_at: new Date().toISOString(),
+  };
 
   try {
-    const payload = req.body || {};
-    // Store lead in Supabase
+    if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE) {
+      return res.status(200).json({ ok: true, stored: false, note: 'Supabase env not set' });
+    }
+
     const supabaseRes = await fetch(`${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}`, {
       method: 'POST',
       headers: {
@@ -25,7 +32,7 @@ export default async function handler(req, res) {
         Authorization: `Bearer ${SUPABASE_SERVICE_ROLE}`,
         Prefer: 'return=representation',
       },
-      body: JSON.stringify({ ...payload, stripe_status: 'failed_or_pending' }),
+      body: JSON.stringify(body),
     });
 
     if (!supabaseRes.ok) {
@@ -33,16 +40,15 @@ export default async function handler(req, res) {
       throw new Error(`Supabase error: ${supabaseRes.status} ${text}`);
     }
 
-    // Optional: email notification
     if (EMAIL_WEBHOOK_URL) {
       await fetch(EMAIL_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: 'lead', payload }),
+        body: JSON.stringify({ type: 'lead', payload: body }),
       });
     }
 
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, stored: true });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: err.message || 'Server error' });
