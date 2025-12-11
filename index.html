@@ -3,54 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Discover by MCP</title>
-  <meta name="description" content="MCP-ready landing page with a single CTA and optional lead capture.">
+  <title>MCP Access</title>
+  <meta name="description" content="Plain MCP-ready landing page with one CTA and an optional lead capture form.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050914;
+      --bg: #040812;
       --panel: #0b1326;
-      --text: #e8efff;
-      --muted: #9eb3d8;
-      --accent: #3af2c6;
-      --accent-2: #5dd6ff;
+      --card: #0e1830;
+      --text: #e8f0ff;
+      --muted: #9db5d8;
+      --accent: #7af7d4;
+      --accent-2: #71c6ff;
       --border: #1c2d52;
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+      --shadow: 0 16px 52px rgba(0, 0, 0, 0.42);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at 18% 20%, rgba(61,242,198,0.08), transparent 30%),
-                  radial-gradient(circle at 82% 18%, rgba(93,214,255,0.07), transparent 30%),
-                  linear-gradient(135deg, #050914 0%, #09132a 60%, #050914 100%);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(122,247,212,0.08), transparent 30%),
+        radial-gradient(circle at 80% 12%, rgba(113,198,255,0.08), transparent 28%),
+        linear-gradient(135deg, #040812 0%, #081026 60%, #040812 100%);
       color: var(--text);
       min-height: 100vh;
     }
     a { color: inherit; text-decoration: none; }
     .wrap { max-width: 1100px; margin: 0 auto; padding: 28px 20px 72px; }
-    header { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 20px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.3px; }
-    .mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: grid; place-items: center; color: #04101f; font-weight: 800; }
-    .pill { padding: 7px 12px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); font-size: 13px; background: rgba(16,26,48,0.75); }
-    .hero { display: grid; gap: 16px; padding: 26px; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(160deg, rgba(58,242,198,0.08), rgba(93,214,255,0.05)), var(--panel); box-shadow: var(--shadow); position: relative; overflow: hidden; }
-    .hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 72% 12%, rgba(58,242,198,0.10), transparent 32%); pointer-events: none; }
-    h1 { margin: 0; font-size: clamp(30px, 5vw, 44px); line-height: 1.08; letter-spacing: -0.4px; }
-    p.lead { margin: 8px 0 16px; color: var(--muted); max-width: 760px; font-size: 16px; line-height: 1.6; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.2px; }
+    .mark { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(140deg, var(--accent), var(--accent-2)); display: grid; place-items: center; color: #081026; font-weight: 800; }
+    .pill { padding: 7px 12px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); font-size: 13px; background: rgba(14,24,48,0.78); }
+    .hero { display: grid; gap: 14px; padding: 26px; border: 1px solid var(--border); border-radius: 16px; background: linear-gradient(170deg, rgba(122,247,212,0.09), rgba(113,198,255,0.05)), var(--panel); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 78% 14%, rgba(122,247,212,0.12), transparent 32%); pointer-events: none; }
+    h1 { margin: 0; font-size: clamp(30px, 5vw, 44px); line-height: 1.08; letter-spacing: -0.35px; }
+    p.lead { margin: 6px 0 14px; color: var(--muted); max-width: 760px; font-size: 16px; line-height: 1.6; }
     .cta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; position: relative; z-index: 1; }
     .btn { padding: 13px 16px; border-radius: 12px; border: 1px solid transparent; font-weight: 700; cursor: pointer; transition: all 0.16s ease; font-size: 15px; }
-    .btn-primary { background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #04101f; box-shadow: 0 12px 36px rgba(58,242,198,0.25); }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 44px rgba(58,242,198,0.32); }
+    .btn-primary { background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #081026; box-shadow: 0 12px 34px rgba(122,247,212,0.26); }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 44px rgba(122,247,212,0.32); }
     .btn-secondary { background: transparent; border-color: var(--border); color: var(--text); }
     .note { font-size: 13px; color: var(--muted); }
     .section { margin-top: 40px; }
     .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .card { padding: 16px; border: 1px solid var(--border); border-radius: 14px; background: rgba(13,20,38,0.9); box-shadow: var(--shadow); }
+    .card { padding: 16px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: var(--shadow); }
     .card h3 { margin: 0 0 6px; font-size: 17px; }
     .card p, .card li { margin: 0; color: var(--muted); line-height: 1.5; }
-    .list { display: grid; gap: 10px; color: var(--muted); }
+    .list { display: grid; gap: 8px; color: var(--muted); }
     .list strong { color: #fff; }
     .form { display: grid; gap: 10px; }
     .form input, .form textarea { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: #0a1429; color: var(--text); font-size: 14px; }
@@ -66,65 +68,65 @@
   <div class="wrap">
     <header>
       <div class="brand">
-        <div class="mark">M</div>
-        <div>Discover by MCP</div>
+        <div class="mark">A</div>
+        <div>MCP Access</div>
       </div>
-      <div class="pill">Agent-friendly. One CTA. Measurable.</div>
+      <div class="pill">Agent-ready. One decision. Clear actions.</div>
     </header>
 
     <section class="hero">
-      <h1>Make your site AI-usable with one clear action.</h1>
-      <p class="lead">This is a lean, MCP-ready landing page: one CTA to book, optional fallback form, and a serverless endpoint you can point to Supabase or any webhook.</p>
+      <h1>Publish an MCP-ready access point in minutes.</h1>
+      <p class="lead">A focused landing page with one primary action and a fallback form that posts to a simple serverless endpoint. No bloat, no build pipeline.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://calendar.app.google/Fo8yGFH3SYZWpznbA" target="_blank" rel="noopener">Book a 20‑min build scope</a>
+        <a class="btn btn-primary" href="https://calendar.app.google/Fo8yGFH3SYZWpznbA" target="_blank" rel="noopener">Book a 20‑min session</a>
         <a class="btn btn-secondary" href="#form">Use the fallback form</a>
-        <span class="note">Same-day setup • Any stack • MCP friendly</span>
+        <span class="note">Static HTML + /api/lead (POST JSON)</span>
       </div>
     </section>
 
     <section class="section grid">
       <div class="card">
-        <h3>Why MCP-ready?</h3>
-        <p>Agents need structured data and predictable actions. This page gives them both: clean copy, a single decision, and an endpoint to capture intent.</p>
+        <h3>Purpose-built</h3>
+        <p>One clear decision for humans and agents. Direct links for primary action, JSON POST for automation.</p>
       </div>
       <div class="card">
-        <h3>What’s inside</h3>
+        <h3>Small surface</h3>
         <ul class="list">
-          <li><strong>Static HTML</strong> that deploys anywhere (Vercel ready).</li>
-          <li><strong>/api/lead</strong> serverless function for POST JSON.</li>
-          <li><strong>Supabase-ready</strong> environment variables.</li>
+          <li><strong>Static</strong> page deploys anywhere.</li>
+          <li><strong>/api/lead</strong> accepts JSON payloads.</li>
+          <li><strong>Env-first</strong> config for storage/webhooks.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Quick setup</h3>
-        <p>Drop in your calendar link, set env vars, deploy. No build step required.</p>
+        <h3>Easy to adapt</h3>
+        <p>Swap the CTA link, adjust fields, or route the handler to your CRM or data store.</p>
       </div>
     </section>
 
     <section class="section card" id="form">
       <h3>Fallback form</h3>
-      <p class="note">Sends JSON to <code>/api/lead</code>. Replace env vars to route to your store or webhook.</p>
+      <p class="note">Posts to <code>/api/lead</code>. Customize fields as needed.</p>
       <form class="form" id="fallback-form">
         <input name="name" placeholder="Full name" required />
         <input name="email" type="email" placeholder="Work email" required />
         <input name="domain" placeholder="Your domain" required />
-        <textarea name="notes" placeholder="What should AI be able to do?"></textarea>
-        <button type="submit" class="btn btn-primary">Send details</button>
+        <textarea name="notes" placeholder="Context or requests"></textarea>
+        <button type="submit" class="btn btn-primary">Send</button>
         <div class="note" id="form-note">We respond within 1 business day.</div>
       </form>
     </section>
 
     <section class="section card">
-      <h3>How to adapt</h3>
+      <h3>How to extend</h3>
       <div class="list">
-        <div><strong>Copy:</strong> Change headline/CTA to your offer.</div>
-        <div><strong>Destination:</strong> Swap the calendar link or point to a checkout.</div>
-        <div><strong>Data:</strong> Adjust fields or extend <code>/api/lead</code> to call CRMs, email APIs, or Stripe.</div>
+        <div><strong>Copy:</strong> Replace headline/CTA with your offer.</div>
+        <div><strong>Destination:</strong> Point the primary CTA to booking, checkout, or docs.</div>
+        <div><strong>Handler:</strong> In <code>/api/lead</code>, add CRM calls, email, or queues.</div>
       </div>
     </section>
 
     <footer>
-      <div>© 2025 Discover by MCP</div>
+      <div>© 2025 MCP Access</div>
       <div><a href="mailto:eishan@claytm.com">Contact</a></div>
     </footer>
   </div>
@@ -145,11 +147,11 @@
             body: JSON.stringify(data),
           });
           if (!res.ok) throw new Error('Bad status ' + res.status);
-          note.textContent = 'Got it. We’ll reply within 1 business day.';
+          note.textContent = 'Received. We will reply within 1 business day.';
           form.reset();
         } catch (err) {
           console.error(err);
-          note.textContent = 'Error sending. Please email us directly.';
+          note.textContent = 'Error sending. Please email us instead.';
         }
       });
     }

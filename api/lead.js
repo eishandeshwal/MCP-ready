@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   } = process.env;
 
   const payload = req.body || {};
-  const body = {
+  const record = {
     name: payload.name || '',
     email: payload.email || '',
     domain: payload.domain || '',
@@ -21,7 +21,8 @@ export default async function handler(req, res) {
 
   try {
     if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE) {
-      return res.status(200).json({ ok: true, stored: false, note: 'Supabase env not set' });
+      // Still acknowledge receipt for demo/preview environments.
+      return res.status(200).json({ ok: true, stored: false, reason: 'Supabase env not set' });
     }
 
     const supabaseRes = await fetch(`${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}`, {
@@ -32,7 +33,7 @@ export default async function handler(req, res) {
         Authorization: `Bearer ${SUPABASE_SERVICE_ROLE}`,
         Prefer: 'return=representation',
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify(record),
     });
 
     if (!supabaseRes.ok) {
@@ -44,7 +45,7 @@ export default async function handler(req, res) {
       await fetch(EMAIL_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: 'lead', payload: body }),
+        body: JSON.stringify({ type: 'lead', payload: record }),
       });
     }
 

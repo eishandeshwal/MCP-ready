@@ -1,31 +1,29 @@
-# MCP-ready
-# MCP-ready
+## MCP Access
 
-Fresh, minimal landing page with:
-- Static `index.html` (no build step)
-- Serverless `api/lead.js` endpoint
-- Vercel-ready defaults
+Clean MCP-ready landing page:
+- Static `index.html`
+- Serverless `api/lead.js`
+- No build step required
 
-## Run locally
+### Local dev
 ```bash
 npm install -g vercel
 vercel dev
 ```
 
-## Deploy on Vercel
+### Deploy to Vercel
 - Framework preset: **Other**
 - Root Directory: `./`
-- Build command: _leave empty_ (no build)
+- Build command: leave empty
 - Output directory: `./`
-- Environment Variables (Production + Preview):
+- Env vars (Production + Preview):
   - `SUPABASE_URL`
   - `SUPABASE_SERVICE_ROLE`
-  - `SUPABASE_TABLE` (optional, defaults to `leads`)
+  - `SUPABASE_TABLE` (optional, default `leads`)
   - `EMAIL_WEBHOOK_URL` (optional)
 
-## API contract
-- `POST /api/lead`
-  - Body: JSON `{ name, email, domain, notes }`
-  - Stores in Supabase table `SUPABASE_TABLE` when env vars are present.
-  - If Supabase envs are missing, returns `{ ok: true, stored: false }` so the form still works for demos.
-  - If `EMAIL_WEBHOOK_URL` is set, it also sends `{ type: "lead", payload }` to that webhook.
+### API
+- `POST /api/lead` with JSON `{ name, email, domain, notes }`
+- Stores to Supabase table when `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE` are set.
+- If envs are missing, returns `{ ok: true, stored: false }` to keep the flow usable in previews.
+- If `EMAIL_WEBHOOK_URL` is set, sends `{ type: "lead", payload }` to that webhook.
